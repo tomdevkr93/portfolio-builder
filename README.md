@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Builder
+
+This is a [Next.js](https://nextjs.org) project to build a personal portfolio application.
 
 ## Getting Started
 
