@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import LoginButton from "@/components/home/LoginButton";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,9 +28,7 @@ export default function Home() {
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
-          <li className="bg-primary text-primary-foreground rounded-sm">
-            <Button>Login</Button>
-          </li>
+          <LoginButton />
         </ul>
       </header>
       <div className="grid grid-cols-2 gap-10 mt-10 h-[70vh] px-20">
