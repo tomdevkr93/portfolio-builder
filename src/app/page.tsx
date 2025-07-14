@@ -1,23 +1,28 @@
 import LoginButton from "@/components/home/LoginButton";
+import { AuthType } from "@/components/home/type";
 import Image from "next/image";
 import Link from "next/link";
 
-const navItems = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-export default function Home() {
+export default async function Home({ searchParams }: Props) {
+  const queryString = await searchParams;
+  const navItems = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
+      label: "Contact",
+      href: "/contact",
+    },
+  ];
   return (
     <div className="flex flex-col min-h-screen">
       <header className="flex justify-between items-center bg-gray-100 px-20 py-5">
@@ -28,7 +33,7 @@ export default function Home() {
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
-          <LoginButton />
+          <LoginButton authType={queryString.authType as AuthType} />
         </ul>
       </header>
       <div className="grid grid-cols-2 gap-10 mt-10 h-[70vh] px-20">
